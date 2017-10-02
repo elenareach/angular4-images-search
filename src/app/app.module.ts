@@ -2,15 +2,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { ImageListComponent } from './image-list/image-list.component';
+import { ImageService } from './shared/images.service';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+
+import { MaterialModule } from '@angular/material';
+import { MasonryModule } from 'angular2-masonry';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ImageListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,HttpModule,FormsModule,MasonryModule,MaterialModule,BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ImageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
